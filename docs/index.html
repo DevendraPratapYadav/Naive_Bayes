@@ -1,0 +1,521 @@
+<html>
+
+<head>
+<meta http-equiv=Content-Type content="text/html; charset=windows-1252">
+<meta name=Generator content="Microsoft Word 15 (filtered)">
+<style>
+<!--
+ /* Font Definitions */
+ @font-face
+	{font-family:"Cambria Math";
+	panose-1:2 4 5 3 5 4 6 3 2 4;}
+@font-face
+	{font-family:"Calibri Light";
+	panose-1:2 15 3 2 2 2 4 3 2 4;}
+@font-face
+	{font-family:Calibri;
+	panose-1:2 15 5 2 2 2 4 3 2 4;}
+@font-face
+	{font-family:"Segoe UI";
+	panose-1:2 11 5 2 4 2 4 2 2 3;}
+@font-face
+	{font-family:"Trajan Pro";
+	panose-1:0 0 0 0 0 0 0 0 0 0;}
+ /* Style Definitions */
+ p.MsoNormal, li.MsoNormal, div.MsoNormal
+	{margin-top:0in;
+	margin-right:0in;
+	margin-bottom:8.0pt;
+	margin-left:0in;
+	line-height:107%;
+	font-size:11.0pt;
+	font-family:"Calibri","sans-serif";}
+h1
+	{mso-style-link:"Heading 1 Char";
+	margin-top:12.0pt;
+	margin-right:0in;
+	margin-bottom:0in;
+	margin-left:0in;
+	margin-bottom:.0001pt;
+	line-height:107%;
+	page-break-after:avoid;
+	font-size:16.0pt;
+	font-family:"Calibri Light","sans-serif";
+	color:#2E74B5;
+	font-weight:normal;}
+span.MsoPlaceholderText
+	{color:gray;}
+p.MsoListParagraph, li.MsoListParagraph, div.MsoListParagraph
+	{margin-top:0in;
+	margin-right:0in;
+	margin-bottom:8.0pt;
+	margin-left:.5in;
+	line-height:107%;
+	font-size:11.0pt;
+	font-family:"Calibri","sans-serif";}
+p.MsoListParagraphCxSpFirst, li.MsoListParagraphCxSpFirst, div.MsoListParagraphCxSpFirst
+	{margin-top:0in;
+	margin-right:0in;
+	margin-bottom:0in;
+	margin-left:.5in;
+	margin-bottom:.0001pt;
+	line-height:107%;
+	font-size:11.0pt;
+	font-family:"Calibri","sans-serif";}
+p.MsoListParagraphCxSpMiddle, li.MsoListParagraphCxSpMiddle, div.MsoListParagraphCxSpMiddle
+	{margin-top:0in;
+	margin-right:0in;
+	margin-bottom:0in;
+	margin-left:.5in;
+	margin-bottom:.0001pt;
+	line-height:107%;
+	font-size:11.0pt;
+	font-family:"Calibri","sans-serif";}
+p.MsoListParagraphCxSpLast, li.MsoListParagraphCxSpLast, div.MsoListParagraphCxSpLast
+	{margin-top:0in;
+	margin-right:0in;
+	margin-bottom:8.0pt;
+	margin-left:.5in;
+	line-height:107%;
+	font-size:11.0pt;
+	font-family:"Calibri","sans-serif";}
+span.MsoIntenseEmphasis
+	{color:#5B9BD5;
+	font-style:italic;}
+span.Heading1Char
+	{mso-style-name:"Heading 1 Char";
+	mso-style-link:"Heading 1";
+	font-family:"Calibri Light","sans-serif";
+	color:#2E74B5;}
+.MsoChpDefault
+	{font-family:"Calibri","sans-serif";}
+.MsoPapDefault
+	{margin-bottom:8.0pt;
+	line-height:107%;}
+@page WordSection1
+	{size:8.5in 11.0in;
+	margin:1.0in 1.0in 1.0in 1.0in;}
+div.WordSection1
+	{page:WordSection1;}
+ /* List Definitions */
+ ol
+	{margin-bottom:0in;}
+ul
+	{margin-bottom:0in;}
+-->
+</style>
+
+</head>
+
+<body lang=EN-US>
+
+<div class=WordSection1>
+
+<p class=MsoNormal align=center style='margin-top:0in;margin-right:1.0in;
+margin-bottom:0in;margin-left:1.0in;margin-bottom:.0001pt;text-align:center'><span
+style='font-size:20.0pt;line-height:107%;font-family:"Trajan Pro","serif"'>Naïve
+Bayes Classifier</span></p>
+
+<p class=MsoNormal align=center style='margin-top:0in;margin-right:1.0in;
+margin-bottom:0in;margin-left:6.0in;margin-bottom:.0001pt;text-align:center;
+text-indent:.5in'><span style='font-size:14.0pt;line-height:107%;font-family:
+"Segoe UI","sans-serif"'>-Devendra Pratap Yadav </span></p>
+
+<p class=MsoNormal align=right style='margin-top:0in;margin-right:1.0in;
+margin-bottom:0in;margin-left:1.0in;margin-bottom:.0001pt;text-align:right'><span
+style='font-family:"Segoe UI","sans-serif"'>&nbsp;</span></p>
+
+<p class=MsoNormal style='margin-top:0in;margin-right:1.0in;margin-bottom:0in;
+margin-left:1.0in;margin-bottom:.0001pt'><span style='font-family:"Segoe UI","sans-serif"'>Implementing
+Naïve Bayes Classifier in Python.<br>
+We use the formula for finding the most probable class ‘y’ :</span></p>
+
+<p class=MsoNormal align=center style='margin-top:0in;margin-right:1.0in;
+margin-bottom:0in;margin-left:1.0in;margin-bottom:.0001pt;text-align:center'><span
+style='font-family:"Segoe UI","sans-serif"'><img width=401 height=75
+id="Picture 1" src="index_files/image001.png"></span></p>
+
+<p class=MsoNormal style='margin-top:0in;margin-right:1.0in;margin-bottom:0in;
+margin-left:1.0in;margin-bottom:.0001pt'><span style='font-family:"Segoe UI","sans-serif"'>Where
+k=number of classes<br>
+            p(C<sub>k</sub>) = prior probability of class<br>
+            p(x<sub>i</sub> | C<sub>k</sub>) = likelihood of word x<sub>i</sub>
+belonging to class C<sub>k</sub> </span></p>
+
+<p class=MsoNormal style='margin-top:0in;margin-right:1.0in;margin-bottom:0in;
+margin-left:1.0in;margin-bottom:.0001pt'><span style='font-family:"Segoe UI","sans-serif"'>&nbsp;</span></p>
+
+<p class=MsoNormal align=center style='margin-top:0in;margin-right:1.0in;
+margin-bottom:0in;margin-left:1.0in;margin-bottom:.0001pt;text-align:center'><span
+style='font-size:16.0pt;line-height:107%;font-family:"Trajan Pro","serif"'>Prior
+Probabilities of Data</span></p>
+
+<p class=MsoNormal align=center style='margin-top:0in;margin-right:1.0in;
+margin-bottom:0in;margin-left:1.0in;margin-bottom:.0001pt;text-align:center'><span
+style='font-size:12.0pt;line-height:107%;font-family:"Trajan Pro","serif"'>&nbsp;</span></p>
+
+<p class=MsoNormal style='margin-top:0in;margin-right:1.0in;margin-bottom:0in;
+margin-left:1.0in;margin-bottom:.0001pt'><span style='font-family:"Segoe UI","sans-serif"'>For
+class Ci, prior probability P(Ci) = Number of Emails with class Ci / Total
+Number of Emails            </span></p>
+
+<p class=MsoNormal style='margin-top:0in;margin-right:1.0in;margin-bottom:0in;
+margin-left:1.0in;margin-bottom:.0001pt'><span style='font-family:"Segoe UI","sans-serif"'>Total
+training Emails = 5000</span></p>
+
+<p class=MsoNormal align=center style='margin-top:0in;margin-right:1.0in;
+margin-bottom:0in;margin-left:1.0in;margin-bottom:.0001pt;text-align:center'><span
+style='font-family:"Segoe UI","sans-serif"'>Spam Emails : 2402,                                                    Ham
+Emails : 2598</span></p>
+
+<p class=MsoNormal align=center style='margin-top:0in;margin-right:1.0in;
+margin-bottom:0in;margin-left:1.0in;margin-bottom:.0001pt;text-align:center'><span
+class=MsoIntenseEmphasis><span style='font-size:12.0pt;line-height:107%'>P(spam)=
+0.4804                                         P(Ham)= 0.5196</span></span></p>
+
+<p class=MsoNormal align=center style='margin-top:0in;margin-right:1.0in;
+margin-bottom:0in;margin-left:1.0in;margin-bottom:.0001pt;text-align:center'><span
+class=MsoIntenseEmphasis><span style='font-size:12.0pt;line-height:107%'>&nbsp;</span></span></p>
+
+<p class=MsoNormal style='margin-top:0in;margin-right:1.0in;margin-bottom:0in;
+margin-left:1.0in;margin-bottom:.0001pt'><span style='font-family:"Segoe UI","sans-serif"'>Hence,
+the prior probabilities are similar with slightly more number of Ham emails in
+training data.</span></p>
+
+<p class=MsoNormal style='margin-top:0in;margin-right:1.0in;margin-bottom:0in;
+margin-left:1.0in;margin-bottom:.0001pt'><span style='font-family:"Segoe UI","sans-serif"'>&nbsp;</span></p>
+
+<p class=MsoNormal style='margin-top:0in;margin-right:1.0in;margin-bottom:0in;
+margin-left:1.0in;margin-bottom:.0001pt'><span style='font-family:"Segoe UI","sans-serif"'>&nbsp;</span></p>
+
+<p class=MsoNormal align=center style='margin-top:0in;margin-right:1.0in;
+margin-bottom:0in;margin-left:1.0in;margin-bottom:.0001pt;text-align:center'><span
+style='font-size:16.0pt;line-height:107%;font-family:"Trajan Pro","serif"'>Total
+Vocabulary and most frequent words.</span></p>
+
+<p class=MsoNormal align=center style='margin-top:0in;margin-right:1.0in;
+margin-bottom:0in;margin-left:1.0in;margin-bottom:.0001pt;text-align:center'><span
+style='font-size:14.0pt;line-height:107%;font-family:"Trajan Pro","serif"'>&nbsp;</span></p>
+
+<p class=MsoNormal style='margin-top:0in;margin-right:1.0in;margin-bottom:0in;
+margin-left:1.0in;margin-bottom:.0001pt'><span style='font-family:"Segoe UI","sans-serif"'>Training
+with 5000  emails</span></p>
+
+<p class=MsoNormal style='margin-top:0in;margin-right:1.0in;margin-bottom:0in;
+margin-left:1.0in;margin-bottom:.0001pt'><span class=MsoIntenseEmphasis><span
+style='font-size:14.0pt;line-height:107%'>Ham :  Vocabulary : 996.0  </span></span></p>
+
+<p class=MsoNormal style='margin-top:0in;margin-right:1.0in;margin-bottom:0in;
+margin-left:1.0in;margin-bottom:.0001pt'><span class=MsoIntenseEmphasis><span
+style='font-size:14.0pt;line-height:107%'>Total number of occurrences of all
+words in Ham : 1158206.0</span></span></p>
+
+<p class=MsoNormal style='margin-top:0in;margin-right:1.0in;margin-bottom:0in;
+margin-left:1.0in;margin-bottom:.0001pt'><span class=MsoIntenseEmphasis><span
+style='font-size:14.0pt;line-height:107%'>Spam :  Vocabulary : 969.0  <br>
+Total number of occurrences of all words in Spam :  792238.0</span></span></p>
+
+<p class=MsoNormal style='margin-top:0in;margin-right:1.0in;margin-bottom:0in;
+margin-left:1.0in;margin-bottom:.0001pt'><span style='font-family:"Segoe UI","sans-serif"'>&nbsp;</span></p>
+
+<p class=MsoNormal style='margin-top:0in;margin-right:1.0in;margin-bottom:0in;
+margin-left:1.0in;margin-bottom:.0001pt'><span style='font-family:"Segoe UI","sans-serif"'>The
+most frequent words with their frequency are given below:</span></p>
+
+<p class=MsoNormal style='margin-top:0in;margin-right:1.0in;margin-bottom:0in;
+margin-left:1.0in;margin-bottom:.0001pt'><span style='font-family:"Segoe UI","sans-serif"'>Five
+most frequent words in Ham e-mail : </span></p>
+
+<p class=MsoListParagraphCxSpFirst style='margin-top:0in;margin-right:1.0in;
+margin-bottom:0in;margin-left:1.0in;margin-bottom:.0001pt;text-indent:-.25in'><span
+style='font-family:"Segoe UI","sans-serif"'>1.<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span></span><span style='font-family:"Segoe UI","sans-serif"'>('aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa',
+64869)</span></p>
+
+<p class=MsoListParagraphCxSpMiddle style='margin-top:0in;margin-right:1.0in;
+margin-bottom:0in;margin-left:1.0in;margin-bottom:.0001pt;text-indent:-.25in'><span
+style='font-family:"Segoe UI","sans-serif"'>2.<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span></span><span style='font-family:"Segoe UI","sans-serif"'>('enron',
+47139)</span></p>
+
+<p class=MsoListParagraphCxSpMiddle style='margin-top:0in;margin-right:1.0in;
+margin-bottom:0in;margin-left:1.0in;margin-bottom:.0001pt;text-indent:-.25in'><span
+style='font-family:"Segoe UI","sans-serif"'>3.<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span></span><span style='font-family:"Segoe UI","sans-serif"'>('the', 42690)</span></p>
+
+<p class=MsoListParagraphCxSpMiddle style='margin-top:0in;margin-right:1.0in;
+margin-bottom:0in;margin-left:1.0in;margin-bottom:.0001pt;text-indent:-.25in'><span
+style='font-family:"Segoe UI","sans-serif"'>4.<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span></span><span style='font-family:"Segoe UI","sans-serif"'>('to', 30742)</span></p>
+
+<p class=MsoListParagraphCxSpLast style='margin-top:0in;margin-right:1.0in;
+margin-bottom:0in;margin-left:1.0in;margin-bottom:.0001pt;text-indent:-.25in'><span
+style='font-family:"Segoe UI","sans-serif"'>5.<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span></span><span style='font-family:"Segoe UI","sans-serif"'>('a', 21850)</span></p>
+
+<p class=MsoNormal style='margin-top:0in;margin-right:1.0in;margin-bottom:0in;
+margin-left:1.0in;margin-bottom:.0001pt'><span style='font-family:"Segoe UI","sans-serif"'>&nbsp;</span></p>
+
+<p class=MsoNormal style='margin-top:0in;margin-right:1.0in;margin-bottom:0in;
+margin-left:1.0in;margin-bottom:.0001pt'><span style='font-family:"Segoe UI","sans-serif"'>Five
+most frequent words in Spam e-mail :</span></p>
+
+<p class=MsoListParagraphCxSpFirst style='margin-top:0in;margin-right:1.0in;
+margin-bottom:0in;margin-left:1.0in;margin-bottom:.0001pt;text-indent:-.25in'><span
+style='font-family:"Segoe UI","sans-serif"'>1.<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span></span><span style='font-family:"Segoe UI","sans-serif"'>('enron',
+29125)</span></p>
+
+<p class=MsoListParagraphCxSpMiddle style='margin-top:0in;margin-right:1.0in;
+margin-bottom:0in;margin-left:1.0in;margin-bottom:.0001pt;text-indent:-.25in'><span
+style='font-family:"Segoe UI","sans-serif"'>2.<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span></span><span style='font-family:"Segoe UI","sans-serif"'>('a', 19289)</span></p>
+
+<p class=MsoListParagraphCxSpMiddle style='margin-top:0in;margin-right:1.0in;
+margin-bottom:0in;margin-left:1.0in;margin-bottom:.0001pt;text-indent:-.25in'><span
+style='font-family:"Segoe UI","sans-serif"'>3.<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span></span><span style='font-family:"Segoe UI","sans-serif"'>('the', 18046)</span></p>
+
+<p class=MsoListParagraphCxSpMiddle style='margin-top:0in;margin-right:1.0in;
+margin-bottom:0in;margin-left:1.0in;margin-bottom:.0001pt;text-indent:-.25in'><span
+style='font-family:"Segoe UI","sans-serif"'>4.<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span></span><span style='font-family:"Segoe UI","sans-serif"'>('corp', 16577)</span></p>
+
+<p class=MsoListParagraphCxSpLast style='margin-top:0in;margin-right:1.0in;
+margin-bottom:0in;margin-left:1.0in;margin-bottom:.0001pt;text-indent:-.25in'><span
+style='font-family:"Segoe UI","sans-serif"'>5.<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span></span><span style='font-family:"Segoe UI","sans-serif"'>('to', 15256)</span></p>
+
+<p class=MsoNormal style='margin-top:0in;margin-right:1.0in;margin-bottom:0in;
+margin-left:1.0in;margin-bottom:.0001pt'><span style='font-family:"Segoe UI","sans-serif"'>&nbsp;</span></p>
+
+<p class=MsoNormal align=center style='margin-top:0in;margin-right:1.0in;
+margin-bottom:0in;margin-left:1.0in;margin-bottom:.0001pt;text-align:center'><span
+style='font-size:16.0pt;line-height:107%;font-family:"Trajan Pro","serif"'>Precision
+Loss for small probability values and Solution</span></p>
+
+<p class=MsoNormal style='margin-top:0in;margin-right:1.0in;margin-bottom:0in;
+margin-left:1.0in;margin-bottom:.0001pt'><span style='font-size:12.0pt;
+line-height:107%;font-family:"Trajan Pro","serif"'>&nbsp;</span></p>
+
+<p class=MsoNormal style='margin-top:0in;margin-right:1.0in;margin-bottom:0in;
+margin-left:1.0in;margin-bottom:.0001pt'><span style='font-family:"Segoe UI","sans-serif"'>According
+to MAP class formula,</span></p>
+
+<p class=MsoNormal align=center style='margin-top:0in;margin-right:1.0in;
+margin-bottom:0in;margin-left:1.0in;margin-bottom:.0001pt;text-align:center'><span
+style='font-family:"Segoe UI","sans-serif"'><img width=401 height=75
+id="Picture 2" src="index_files/image001.png"></span></p>
+
+<p class=MsoNormal align=center style='margin-top:0in;margin-right:1.0in;
+margin-bottom:0in;margin-left:1.0in;margin-bottom:.0001pt;text-align:center'><span
+style='font-family:"Segoe UI","sans-serif"'>&nbsp;</span></p>
+
+<p class=MsoNormal style='margin-top:0in;margin-right:1.0in;margin-bottom:0in;
+margin-left:1.0in;margin-bottom:.0001pt'><span style='font-family:"Segoe UI","sans-serif"'>&nbsp;</span></p>
+
+<p class=MsoNormal style='margin-top:0in;margin-right:1.0in;margin-bottom:0in;
+margin-left:1.0in;margin-bottom:.0001pt'><span style='font-family:"Segoe UI","sans-serif"'>Since
+the probabilities p(x<sub>i</sub> | C<sub>k</sub>) are &lt;1, multiplication of
+large number of such values results in underflow and loss of data since the
+value of posterior probability becomes close to zero.</span></p>
+
+<p class=MsoNormal style='margin-top:0in;margin-right:1.0in;margin-bottom:0in;
+margin-left:1.0in;margin-bottom:.0001pt'><span style='font-family:"Segoe UI","sans-serif"'>To
+overcome this, we take the logarithm on both sides of the formula for Posterior
+probability.</span></p>
+
+<p class=MsoNormal style='margin-top:0in;margin-right:1.0in;margin-bottom:0in;
+margin-left:1.0in;margin-bottom:.0001pt'><span style='font-family:"Segoe UI","sans-serif"'>&nbsp;</span></p>
+
+<p class=MsoNormal style='margin-top:0in;margin-right:1.0in;margin-bottom:0in;
+margin-left:1.0in;margin-bottom:.0001pt'><span style='font-family:"Segoe UI","sans-serif"'>&nbsp;</span></p>
+
+<p class=MsoNormal style='margin-top:0in;margin-right:1.0in;margin-bottom:0in;
+margin-left:1.0in;margin-bottom:.0001pt'><span style='font-family:"Segoe UI","sans-serif"'>Log
+( P(C<sub>k</sub> | x1,x2,x3…xn) ) = Log ( P(C<sub>k</sub>)* </span><span
+style='font-size:11.0pt;line-height:107%;font-family:"Calibri","sans-serif";
+position:relative;top:4.5pt'><img width=121 height=26
+src="index_files/image002.png"></span><span style='font-size:12.0pt;line-height:
+107%;font-family:"Segoe UI","sans-serif"'> </span><span style='font-size:12.0pt;
+line-height:107%;font-family:"Segoe UI","sans-serif"'>)</span></p>
+
+<p class=MsoNormal style='margin-top:0in;margin-right:1.0in;margin-bottom:0in;
+margin-left:1.0in;margin-bottom:.0001pt'><span style='font-family:"Segoe UI","sans-serif"'>                                         
+= Log( P(C<sub>k</sub>) ) + </span><span
+style='font-size:11.0pt;line-height:107%;font-family:"Calibri","sans-serif";
+position:relative;top:4.5pt'><img width=182 height=26
+src="index_files/image003.png"></span></p>
+
+<p class=MsoNormal style='margin-top:0in;margin-right:1.0in;margin-bottom:0in;
+margin-left:1.0in;margin-bottom:.0001pt'><span style='font-family:"Segoe UI","sans-serif"'>Where
+x<sub>i</sub> is a word in the email.</span></p>
+
+<p class=MsoNormal style='margin-top:0in;margin-right:1.0in;margin-bottom:0in;
+margin-left:1.0in;margin-bottom:.0001pt'><span style='font-family:"Segoe UI","sans-serif"'><br>
+Since log is an increasing function and probability values are in range [0,1] ,
+<br>
+                                                                  if a&gt;b then
+log a &gt; log b.</span></p>
+
+<p class=MsoNormal style='margin-top:0in;margin-right:1.0in;margin-bottom:0in;
+margin-left:1.0in;margin-bottom:.0001pt'><span style='font-family:"Segoe UI","sans-serif"'>Now,
+instead of multiplying small values, we add the log of those values.<br>
+Hence, we obtain values for both P( Ham | email) and P( Spam | email).</span></p>
+
+<p class=MsoNormal style='margin-top:0in;margin-right:1.0in;margin-bottom:0in;
+margin-left:1.0in;margin-bottom:.0001pt'><span style='font-family:"Segoe UI","sans-serif"'>These
+values will be negative since individual words have probability &lt;=1. So,
+log(a) &lt;=0 for a&lt;=1<br>
+We compare both values and set the class as one having maximum probability.</span></p>
+
+<p class=MsoNormal style='margin-top:0in;margin-right:1.0in;margin-bottom:0in;
+margin-left:1.0in;margin-bottom:.0001pt'><span style='font-family:"Segoe UI","sans-serif"'>&nbsp;</span></p>
+
+<p class=MsoNormal style='margin-top:0in;margin-right:1.0in;margin-bottom:0in;
+margin-left:1.0in;margin-bottom:.0001pt'><span style='font-size:14.0pt;
+line-height:107%;font-family:"Segoe UI","sans-serif"'>&nbsp;</span></p>
+
+<p class=MsoNormal align=center style='margin-top:0in;margin-right:1.0in;
+margin-bottom:0in;margin-left:1.0in;margin-bottom:.0001pt;text-align:center'><span
+style='font-size:20.0pt;line-height:107%;font-family:"Trajan Pro","serif"'>Results</span></p>
+
+<p class=MsoNormal style='margin-top:0in;margin-right:1.0in;margin-bottom:0in;
+margin-left:1.0in;margin-bottom:.0001pt'><span style='font-family:"Segoe UI","sans-serif"'>&nbsp;</span></p>
+
+<p class=MsoNormal style='margin-top:0in;margin-right:1.0in;margin-bottom:0in;
+margin-left:1.0in;margin-bottom:.0001pt'><span style='font-family:"Segoe UI","sans-serif"'>Testing
+data Email classes distribution =  Ham : 420,  Spam : 580</span></p>
+
+<h1 style='margin-top:12.0pt;margin-right:1.0in;margin-bottom:0in;margin-left:
+1.0in;margin-bottom:.0001pt'>Naïve Bayes Classification (using <span
+style='font-family:"Segoe UI","sans-serif"'>m-estimate = 1000</span>)<br>
+Training Accuracy : <b>90.64 %</b><br>
+Test Accuracy        <b><span style='font-size:11.0pt;line-height:107%'>:</span></b><span
+style='font-size:11.0pt;line-height:107%'>  </span><b>89.30 %</b></h1>
+
+<p class=MsoNormal style='margin-top:0in;margin-right:1.0in;margin-bottom:8.0pt;
+margin-left:1.0in'>&nbsp;</p>
+
+<p class=MsoNormal style='margin-top:0in;margin-right:1.0in;margin-bottom:8.0pt;
+margin-left:1.0in'>&nbsp;</p>
+
+<p class=MsoNormal style='margin-top:0in;margin-right:1.0in;margin-bottom:0in;
+margin-left:1.0in;margin-bottom:.0001pt'><span style='font-family:"Segoe UI","sans-serif"'>&nbsp;</span></p>
+
+<p class=MsoNormal align=center style='margin-top:0in;margin-right:1.0in;
+margin-bottom:0in;margin-left:1.0in;margin-bottom:.0001pt;text-align:center'><span
+style='font-size:16.0pt;line-height:107%;font-family:"Trajan Pro","serif"'>Effect
+of varying m-estimate on accuracy</span></p>
+
+<p class=MsoNormal style='margin-top:0in;margin-right:1.0in;margin-bottom:0in;
+margin-left:1.0in;margin-bottom:.0001pt'><span style='font-family:"Trajan Pro","serif"'> </span></p>
+
+<p class=MsoNormal style='margin-top:0in;margin-right:1.0in;margin-bottom:0in;
+margin-left:1.0in;margin-bottom:.0001pt'><span style='font-family:"Segoe UI","sans-serif"'>The
+likelihood probability by using m-estimate : </span></p>
+
+<p class=MsoNormal style='margin-top:0in;margin-right:1.0in;margin-bottom:0in;
+margin-left:1.0in;margin-bottom:.0001pt'><span style='font-family:"Segoe UI","sans-serif"'>&nbsp;</span></p>
+
+<p class=MsoNormal align=center style='margin-top:0in;margin-right:1.0in;
+margin-bottom:0in;margin-left:1.0in;margin-bottom:.0001pt;text-align:center'><img
+width=608 height=80 id="Picture 3" src="index_files/image004.png"></p>
+
+<p class=MsoNormal style='margin-top:0in;margin-right:1.0in;margin-bottom:0in;
+margin-left:1.0in;margin-bottom:.0001pt'><span style='font-family:"Segoe UI","sans-serif"'><br>
+where  m= equivalent sample size<br>
+            p = prior estimate of probability for word x<sub>i</sub> =  <b>1/
+|Vocabulary|</b></span></p>
+
+<p class=MsoNormal style='margin-top:0in;margin-right:1.0in;margin-bottom:0in;
+margin-left:1.0in;margin-bottom:.0001pt'><b><span style='font-family:"Segoe UI","sans-serif"'>&nbsp;</span></b></p>
+
+<p class=MsoNormal style='margin-top:0in;margin-right:1.0in;margin-bottom:0in;
+margin-left:1.0in;margin-bottom:.0001pt'><span style='font-family:"Segoe UI","sans-serif"'> </span></p>
+
+<p class=MsoNormal align=center style='margin-top:0in;margin-right:1.0in;
+margin-bottom:0in;margin-left:1.0in;margin-bottom:.0001pt;text-align:center'><img
+width=909 height=428 id="Chart 4" src="index_files/image005.png"></p>
+
+<p class=MsoNormal style='margin-top:0in;margin-right:1.0in;margin-bottom:0in;
+margin-left:1.0in;margin-bottom:.0001pt'><span style='font-family:"Segoe UI","sans-serif"'>&nbsp;</span></p>
+
+<p class=MsoNormal style='margin-top:0in;margin-right:1.0in;margin-bottom:0in;
+margin-left:1.0in;margin-bottom:.0001pt'><span style='font-family:"Segoe UI","sans-serif"'>We
+observe that for small values of m-estimate, the accuracy remains consistent at
+~89.5%. The vocabulary for both Ham and Spam is ~1000. When we get close to
+small multiples of 1000, the accuracy starts to drop.  It drops to 84% for
+m-estimate = 838860 which is close to the “Total occurrences of all words” in
+emails.</span></p>
+
+<p class=MsoNormal style='margin-top:0in;margin-right:1.0in;margin-bottom:0in;
+margin-left:1.0in;margin-bottom:.0001pt'><span style='font-family:"Segoe UI","sans-serif"'>For
+very large values of m-estimate, the denominator i.e. “Total count of words in
+email” in the likelihood probability formula becomes large and the probability
+becomes very small. The effect on word frequency in likelihood estimation
+decreases. Hence, we notice a decrease in accuracy for very large values of
+m-estimate.</span></p>
+
+<p class=MsoNormal style='margin-top:0in;margin-right:1.0in;margin-bottom:0in;
+margin-left:1.0in;margin-bottom:.0001pt'><span style='font-family:"Segoe UI","sans-serif"'>&nbsp;</span></p>
+
+<p class=MsoNormal style='margin-top:0in;margin-right:1.0in;margin-bottom:0in;
+margin-left:1.0in;margin-bottom:.0001pt'><span style='font-family:"Segoe UI","sans-serif"'>In
+effect, the m-estimate adds a value equal to ‘m*p’ to the frequency of all
+words in the email. If m is small, there is negligible effect on probabilities
+of words, only those with 0 probability get a very small value.</span></p>
+
+<p class=MsoNormal style='margin-top:0in;margin-right:1.0in;margin-bottom:0in;
+margin-left:1.0in;margin-bottom:.0001pt'><span style='font-family:"Segoe UI","sans-serif"'>Hence,
+if we are using small values of m, we assume that the average frequency of
+words in email is small. We use a small value so as to prevent frequency values
+from becoming much larger than original and producing incorrect probabilities. The
+job of m-estimate is to prevent 0 likelihood probability values. It must not
+skew the frequency values and result in a distribution very different from the
+original.<br>
+<br>
+<br>
+</span></p>
+
+<p class=MsoNormal align=center style='margin-top:0in;margin-right:1.0in;
+margin-bottom:0in;margin-left:1.0in;margin-bottom:.0001pt;text-align:center'><span
+style='font-size:16.0pt;line-height:107%;font-family:"Trajan Pro","serif"'>Beating
+the classifier and possible weaknesses</span></p>
+
+<p class=MsoNormal style='margin-top:0in;margin-right:1.0in;margin-bottom:0in;
+margin-left:1.0in;margin-bottom:.0001pt'><span style='font-family:"Segoe UI","sans-serif"'><br>
+Our classifier classifies the email based on the words present in the email. An
+email is classified as spam if it has a large fraction of words which are “spam
+words”. To decrease the probability of it being spam, we can add a large number
+of “Ham words” i.e. words that frequently occur in Ham emails. Hence, the Ham
+words will nullify the penalties caused by Spam words and the classifier will
+produce incorrect classification.<br>
+<br>
+Since the classifier relies on text data i.e. words in the email, we can
+replace our spam message with images that contain text. This will make it
+difficult for spam classifier to extract words. The classifier must use Optical
+Character Recognition to extract text which will slow the process
+significantly.<br>
+<br>
+We can also intelligently format our spam email in the same way as a ham email,
+avoiding use of ALL CAPITAL words in our email, using correct spellings and
+avoiding non-ASCII characters. We can also disguise the most frequent Spam
+words using incorrect spelling. Example : spell “Vacation” as “Vacat!on”. This
+new spelling is highly unlikely to be present in spam classifier’s vocabulary.<br>
+<br>
+Overall, the Naïve Bayes Classifier performs very well for spam classification.
+It is fast and has a relatively high accuracy for such text classification
+tasks.</span></p>
+
+<p class=MsoNormal style='margin-top:0in;margin-right:1.0in;margin-bottom:0in;
+margin-left:1.0in;margin-bottom:.0001pt'><span style='font-family:"Segoe UI","sans-serif"'>&nbsp;</span></p>
+
+<p class=MsoNormal style='margin-top:0in;margin-right:1.0in;margin-bottom:0in;
+margin-left:1.0in;margin-bottom:.0001pt'><span style='font-family:"Segoe UI","sans-serif"'>&nbsp;</span></p>
+
+</div>
+
+</body>
+
+</html>
